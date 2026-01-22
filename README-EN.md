@@ -57,7 +57,21 @@ Help me install the skill from https://github.com/yizhiyanhua-ai/chuinb-skill to
 
 Claude will automatically download and install it for you.
 
-### Step 3: Install Dependencies
+### Step 3: Install Dependent Skills
+
+This skill requires two helper skills for image generation and media downloading. Tell Claude:
+
+```
+Help me install these two skills to ~/.claude/skills:
+- https://github.com/anthropics/claude-code-skills/tree/main/skills/zimage-skill
+- https://github.com/anthropics/claude-code-skills/tree/main/skills/media-downloader
+```
+
+> 💡 **What these skills do:**
+> - **zimage-skill**: Generate AI concept diagrams, flowcharts, etc.
+> - **media-downloader**: Download images and video clips from the web
+
+### Step 4: Install Dependencies
 
 Continue telling Claude:
 
@@ -67,7 +81,7 @@ Help me install the dependencies for chuinb-skill: yt-dlp, ffmpeg, and Pillow
 
 Claude will detect your system and install the required tools automatically.
 
-### Step 4: Configure API Keys
+### Step 5: Configure API Keys
 
 This skill needs two free API keys:
 
@@ -96,7 +110,7 @@ PEXELS_API_KEY=your-pexels-key
 
 Claude will automatically add them to your config file.
 
-### Step 5: Verify Installation
+### Step 6: Verify Installation
 
 Tell Claude:
 

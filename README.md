@@ -57,7 +57,21 @@
 
 Claude 会自动帮你下载并安装。
 
-### 第三步：安装依赖工具
+### 第三步：安装依赖技能
+
+这个技能需要两个辅助技能来实现图片生成和媒体下载功能。对 Claude 说：
+
+```
+帮我安装这两个技能到 ~/.claude/skills 目录：
+- https://github.com/anthropics/claude-code-skills/tree/main/skills/zimage-skill
+- https://github.com/anthropics/claude-code-skills/tree/main/skills/media-downloader
+```
+
+> 💡 **这两个技能的作用：**
+> - **zimage-skill**：使用 AI 生成概念图、流程图等
+> - **media-downloader**：从网络下载图片和视频素材
+
+### 第四步：安装依赖工具
 
 继续对 Claude 说：
 
@@ -67,7 +81,7 @@ Claude 会自动帮你下载并安装。
 
 Claude 会自动检测你的系统并安装所需工具。
 
-### 第四步：配置 API 密钥
+### 第五步：配置 API 密钥
 
 这个技能需要两个免费的 API 密钥：
 
@@ -96,7 +110,7 @@ PEXELS_API_KEY=你的Pexels密钥
 
 Claude 会自动帮你添加到配置文件。
 
-### 第五步：验证安装
+### 第六步：验证安装
 
 对 Claude 说：
 
