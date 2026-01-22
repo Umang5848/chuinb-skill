@@ -1,0 +1,29 @@
+# 敏感配置文件
+.claude/settings.local.json
+
+# 示例输出（可选，如果想保留示例可以注释掉）
+影评人速成指南/
+
+# 系统文件
+.DS_Store
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.temp
+
+# 日志文件
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# 环境变量文件
+.env
+.env.local
