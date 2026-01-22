@@ -37,112 +37,80 @@ Imagine these scenarios:
 
 ---
 
-## Installation Guide (Beginner Friendly)
+## Installation Guide (Super Easy!)
+
+> 💡 **All steps can be done directly in Claude Code using natural language - no manual commands needed!**
 
 ### Step 1: Make Sure You Have Claude Code Installed
 
-If you can run the `claude` command in your terminal and see Claude's interface, you're all set.
+If you can type `claude` in your terminal and see Claude's interface, you're all set.
 
-If not, please visit [Claude Code official website](https://claude.ai/code) and follow the installation guide.
+Not installed yet? Visit [Claude Code official website](https://claude.ai/code) and follow the installation guide.
 
 ### Step 2: Install This Skill
 
-Run the following commands in your terminal:
+Open Claude Code and simply say:
 
-```bash
-# Navigate to Claude Code's skills directory
-cd ~/.claude/skills
-
-# Create the directory if it doesn't exist
-mkdir -p ~/.claude/skills
-
-# Download this skill (if you got it from GitHub)
-# git clone https://github.com/your-repo/chuinb-skill.git
-
-# Or simply copy the entire chuinb-skill folder here
 ```
+Help me install the skill from https://github.com/yizhiyanhua-ai/chuinb-skill to ~/.claude/skills
+```
+
+Claude will automatically download and install it for you.
 
 ### Step 3: Install Dependencies
 
-This skill requires some helper tools to work properly:
+Continue telling Claude:
 
-#### 1. Install Python Dependencies
-
-```bash
-pip install requests yt-dlp Pillow
+```
+Help me install the dependencies for chuinb-skill: yt-dlp, ffmpeg, and Pillow
 ```
 
-#### 2. Install Video Processing Tool
-
-**Mac users**:
-```bash
-brew install ffmpeg
-```
-
-**Windows users**:
-Download and install from [ffmpeg official website](https://ffmpeg.org/download.html).
-
-**Linux users**:
-```bash
-sudo apt install ffmpeg
-```
+Claude will detect your system and install the required tools automatically.
 
 ### Step 4: Configure API Keys
 
-This skill needs some free API keys to generate images and download media.
+This skill needs two free API keys:
 
-#### Get ModelScope API Key (for AI image generation)
+#### 1. Get ModelScope API Key (for AI image generation)
 
 1. Go to https://modelscope.cn
 2. Register an account
 3. After logging in, click your avatar → "My Access Tokens"
-4. Create a new access token and copy it
+4. Create a new token and copy it
 
-#### Configure Environment Variables
+#### 2. Get Pexels API Key (for downloading images, optional)
 
-**Mac/Linux users**, edit your `~/.zshrc` or `~/.bashrc` file:
+1. Go to https://www.pexels.com/api/
+2. Register an account
+3. Click "Your API Key" to get your key
 
-```bash
-# Open with your favorite editor, e.g.:
-nano ~/.zshrc
+#### 3. Let Claude Configure It
 
-# Add this line at the end:
-export MODELSCOPE_API_KEY="your-copied-key"
+Once you have the keys, tell Claude:
 
-# Save and run this command to apply:
-source ~/.zshrc
+```
+Help me configure environment variables:
+MODELSCOPE_API_KEY=your-modelscope-key
+PEXELS_API_KEY=your-pexels-key
 ```
 
-**Windows users**:
-1. Search for "Environment Variables"
-2. Click "Edit the system environment variables"
-3. Click "Environment Variables" button
-4. Under "User variables", click "New"
-5. Variable name: `MODELSCOPE_API_KEY`, Variable value: your key
-
-#### (Optional) Configure Image Download API
-
-If you want to download web images (not just AI-generated ones), you'll also need to configure image library APIs:
-
-1. Visit https://www.pexels.com/api/ to register and get a free API Key
-2. Add to environment variables: `export PEXELS_API_KEY="your-key"`
+Claude will automatically add them to your config file.
 
 ### Step 5: Verify Installation
 
-Run in terminal:
+Tell Claude:
 
-```bash
-# Check media-downloader status
-python ~/.claude/skills/media-downloader/media_cli.py status
+```
+Check if all dependencies for chuinb-skill are installed correctly
 ```
 
-If you see yt-dlp and ffmpeg showing ✅, the installation is successful!
+Claude will check and report the results.
 
 ---
 
 ## How to Use
 
-### Method 1: Natural Conversation
+### Natural Conversation (Recommended)
 
 Open Claude Code and simply say:
 
@@ -158,7 +126,7 @@ I want to become an insider in the coffee industry
 I have a meeting about blockchain next week, help me get up to speed
 ```
 
-### Method 2: Use Commands
+### Use Commands
 
 ```
 /chuinb semiconductor industry
@@ -186,7 +154,7 @@ your-specified-directory/
 ├── Private-Equity-Quick-Guide.md    # Main document (can be opened with Obsidian)
 └── media/                            # Media folder
     ├── diagram-value-chain.jpg       # AI-generated value chain diagram
-    ├── diagram-process.jpg           # AI-generated process diagram
+    ├── person-xxx.jpg                # Downloaded portrait photos
     └── video-explained.mp4           # Downloaded tutorial video
 ```
 
@@ -206,42 +174,36 @@ The notes include:
 
 ### Q: Getting "API Key required" error when generating images
 
-**Solution**: Make sure you've configured the `MODELSCOPE_API_KEY` environment variable and restarted your terminal.
+Tell Claude: `Help me check if MODELSCOPE_API_KEY environment variable is configured correctly`
 
 ### Q: Video download fails
 
-**Solution**:
-1. Make sure yt-dlp is installed: `pip install yt-dlp`
-2. Make sure ffmpeg is installed: `brew install ffmpeg` (Mac)
+Tell Claude: `Help me install yt-dlp and ffmpeg`
 
 ### Q: Image download fails
 
-**Solution**: This skill prioritizes AI-generated images, so it's okay if image downloads fail. If you want to download web images, you need to configure Pexels or Pixabay API Keys.
+This skill prioritizes AI-generated images, so it's okay if image downloads fail. If you want to download web images, you need to configure Pexels API Key.
 
 ### Q: Images/videos in notes don't display
 
-**Solution**: This skill generates notes using Obsidian syntax (`![[filename]]`). We recommend using [Obsidian](https://obsidian.md) to open the notes, and images/videos will display properly.
+This skill generates notes using Obsidian syntax (`![[filename]]`). We recommend using [Obsidian](https://obsidian.md) to open the notes.
 
 ### Q: Can I use Chinese or English?
 
-**Answer**: Both! This skill supports bilingual Chinese and English. You can ask questions in either language, and it will generate content accordingly.
+Both! This skill supports bilingual Chinese and English.
 
 ---
 
 ## Technical Support
 
-If you encounter issues:
-
-1. Type `/help` in Claude Code to see help
-2. Check if environment variables are configured correctly
-3. Make sure all dependency tools are installed
+If you encounter any issues, just describe your problem in Claude Code, and Claude will help you solve it.
 
 ---
 
 ## Changelog
 
 ### v1.1.0 (2026-01-22)
-- New: Mandatory media acquisition flow, ensuring images and videos are generated/downloaded every time
+- New: Smart media acquisition (real image download + AI concept generation)
 - New: Ask user for save path before saving
 - New: Chinese and English README documentation
 - Improved: Clearer execution flow

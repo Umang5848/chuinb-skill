@@ -37,112 +37,80 @@
 
 ---
 
-## 安装指南（小白友好版）
+## 安装指南（超简单！）
+
+> 💡 **所有步骤都可以直接在 Claude Code 中用自然语言完成，不需要手动输入命令！**
 
 ### 第一步：确认你已经安装了 Claude Code
 
-如果你能在终端里运行 `claude` 命令并看到 Claude 的界面，说明你已经安装好了。
+如果你能在终端里输入 `claude` 并看到 Claude 的界面，说明已经安装好了。
 
-如果还没安装，请先访问 [Claude Code 官网](https://claude.ai/code) 按照指引安装。
+还没安装？访问 [Claude Code 官网](https://claude.ai/code) 按照指引安装。
 
 ### 第二步：安装这个技能
 
-在终端里运行以下命令：
+打开 Claude Code，直接说：
 
-```bash
-# 进入 Claude Code 的技能目录
-cd ~/.claude/skills
-
-# 如果目录不存在，先创建它
-mkdir -p ~/.claude/skills
-
-# 下载这个技能（如果你是从 GitHub 获取的）
-# git clone https://github.com/your-repo/chuinb-skill.git
-
-# 或者直接复制整个 chuinb-skill 文件夹到这里
 ```
+帮我把 https://github.com/yizhiyanhua-ai/chuinb-skill 这个技能安装到 ~/.claude/skills 目录
+```
+
+Claude 会自动帮你下载并安装。
 
 ### 第三步：安装依赖工具
 
-这个技能需要一些辅助工具才能正常工作：
+继续对 Claude 说：
 
-#### 1. 安装 Python 依赖
-
-```bash
-pip install requests yt-dlp Pillow
+```
+帮我安装 chuinb-skill 需要的依赖：yt-dlp、ffmpeg 和 Pillow
 ```
 
-#### 2. 安装视频处理工具
-
-**Mac 用户**：
-```bash
-brew install ffmpeg
-```
-
-**Windows 用户**：
-从 [ffmpeg 官网](https://ffmpeg.org/download.html) 下载并安装。
-
-**Linux 用户**：
-```bash
-sudo apt install ffmpeg
-```
+Claude 会自动检测你的系统并安装所需工具。
 
 ### 第四步：配置 API 密钥
 
-这个技能需要一些免费的 API 密钥来生成图片和下载素材。
+这个技能需要两个免费的 API 密钥：
 
-#### 获取 ModelScope API Key（用于 AI 生成图片）
+#### 1. 获取 ModelScope API Key（用于 AI 生成图片）
 
 1. 打开 https://modelscope.cn
-2. 注册一个账号（可以用手机号）
+2. 注册账号（可以用手机号）
 3. 登录后，点击右上角头像 → "我的访问令牌"
-4. 创建一个新的访问令牌，复制它
+4. 创建新令牌，复制它
 
-#### 配置环境变量
+#### 2. 获取 Pexels API Key（用于下载图片，可选）
 
-**Mac/Linux 用户**，编辑你的 `~/.zshrc` 或 `~/.bashrc` 文件：
+1. 打开 https://www.pexels.com/api/
+2. 注册账号
+3. 点击 "Your API Key" 获取密钥
 
-```bash
-# 用你喜欢的编辑器打开，比如：
-nano ~/.zshrc
+#### 3. 让 Claude 帮你配置
 
-# 在文件末尾添加这一行：
-export MODELSCOPE_API_KEY="你复制的密钥"
+拿到密钥后，对 Claude 说：
 
-# 保存后，运行这个命令让配置生效：
-source ~/.zshrc
+```
+帮我配置环境变量：
+MODELSCOPE_API_KEY=你的ModelScope密钥
+PEXELS_API_KEY=你的Pexels密钥
 ```
 
-**Windows 用户**：
-1. 搜索"环境变量"
-2. 点击"编辑系统环境变量"
-3. 点击"环境变量"按钮
-4. 在"用户变量"中点击"新建"
-5. 变量名填 `MODELSCOPE_API_KEY`，变量值填你的密钥
-
-#### （可选）配置图片下载 API
-
-如果你想下载网络图片（而不只是 AI 生成），还需要配置图库 API：
-
-1. 访问 https://www.pexels.com/api/ 注册获取免费 API Key
-2. 添加到环境变量：`export PEXELS_API_KEY="你的密钥"`
+Claude 会自动帮你添加到配置文件。
 
 ### 第五步：验证安装
 
-在终端运行：
+对 Claude 说：
 
-```bash
-# 检查 media-downloader 状态
-python ~/.claude/skills/media-downloader/media_cli.py status
+```
+检查一下 chuinb-skill 的依赖是否都安装好了
 ```
 
-如果看到 yt-dlp 和 ffmpeg 显示 ✅，说明安装成功了！
+Claude 会帮你检查并告诉你结果。
 
 ---
 
 ## 使用方法
 
-### 方法一：直接对话
+### 直接对话（推荐）
 
 打开 Claude Code，直接用自然语言说：
 
@@ -158,7 +126,7 @@ python ~/.claude/skills/media-downloader/media_cli.py status
 下周要和区块链的人聊天，帮我速成
 ```
 
-### 方法二：使用命令
+### 使用命令
 
 ```
 /chuinb 半导体行业
@@ -186,7 +154,7 @@ python ~/.claude/skills/media-downloader/media_cli.py status
 ├── 私募股权行业速成指南.md    # 主文档（可以用 Obsidian 打开）
 └── media/                      # 媒体文件夹
     ├── diagram-value-chain.jpg # AI 生成的价值链图
-    ├── diagram-process.jpg     # AI 生成的流程图
+    ├── person-xxx.jpg          # 下载的人物照片
     └── video-explained.mp4     # 下载的教学视频
 ```
 
@@ -206,42 +174,36 @@ python ~/.claude/skills/media-downloader/media_cli.py status
 
 ### Q: 生成图片时报错 "API Key required"
 
-**解决方法**：确保你已经配置了 `MODELSCOPE_API_KEY` 环境变量，并且重启了终端。
+对 Claude 说：`帮我检查 MODELSCOPE_API_KEY 环境变量是否配置正确`
 
 ### Q: 视频下载失败
 
-**解决方法**：
-1. 确保安装了 yt-dlp：`pip install yt-dlp`
-2. 确保安装了 ffmpeg：`brew install ffmpeg`（Mac）
+对 Claude 说：`帮我安装 yt-dlp 和 ffmpeg`
 
 ### Q: 图片下载失败
 
-**解决方法**：这个技能会优先使用 AI 生成图片，所以即使图片下载失败也没关系。如果你想下载网络图片，需要配置 Pexels 或 Pixabay 的 API Key。
+这个技能会优先使用 AI 生成图片，所以即使图片下载失败也没关系。如果你想下载网络图片，需要配置 Pexels API Key。
 
 ### Q: 笔记里的图片/视频显示不出来
 
-**解决方法**：这个技能生成的笔记使用 Obsidian 的语法（`![[文件名]]`）。推荐使用 [Obsidian](https://obsidian.md) 打开笔记，图片和视频就能正常显示了。
+这个技能生成的笔记使用 Obsidian 的语法（`![[文件名]]`）。推荐使用 [Obsidian](https://obsidian.md) 打开笔记。
 
 ### Q: 可以用中文还是英文？
 
-**回答**：都可以！这个技能支持中英文双语，你可以用中文或英文提问，它会根据你的语言生成对应的内容。
+都可以！这个技能支持中英文双语。
 
 ---
 
 ## 技术支持
 
-如果遇到问题，可以：
-
-1. 在 Claude Code 中输入 `/help` 查看帮助
-2. 检查环境变量是否配置正确
-3. 确保所有依赖工具都已安装
+遇到任何问题，直接在 Claude Code 中描述你的问题，Claude 会帮你解决。
 
 ---
 
 ## 更新日志
 
 ### v1.1.0 (2026-01-22)
-- 新增：强制媒体获取流程，确保每次都生成图片和下载视频
+- 新增：智能媒体获取（事实性图片下载 + 概念图 AI 生成）
 - 新增：保存前询问用户路径
 - 新增：中英文 README 文档
 - 优化：更清晰的执行流程
