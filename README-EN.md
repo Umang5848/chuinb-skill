@@ -63,8 +63,8 @@ This skill requires two helper skills for image generation and media downloading
 
 ```
 Help me install these two skills to ~/.claude/skills:
-- https://github.com/anthropics/claude-code-skills/tree/main/skills/zimage-skill
-- https://github.com/anthropics/claude-code-skills/tree/main/skills/media-downloader
+- https://github.com/yizhiyanhua-ai/zimage-skill
+- https://github.com/yizhiyanhua-ai/media-downloader
 ```
 
 > 💡 **What these skills do:**
