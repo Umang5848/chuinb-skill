@@ -63,8 +63,8 @@ Claude 会自动帮你下载并安装。
 
 ```
 帮我安装这两个技能到 ~/.claude/skills 目录：
-- https://github.com/anthropics/claude-code-skills/tree/main/skills/zimage-skill
-- https://github.com/anthropics/claude-code-skills/tree/main/skills/media-downloader
+- https://github.com/yizhiyanhua-ai/zimage-skill
+- https://github.com/yizhiyanhua-ai/media-downloader
 ```
 
 > 💡 **这两个技能的作用：**
